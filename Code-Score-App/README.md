@@ -1,3 +1,5 @@
+#codescore
+
 Code Score App prepared for Code Alliance/Benetech for Chi4Good Day of Service at ACM CHI 2016, May 7, 2016, San Jose, California.
 
 @author: S. West and Code Score Web App Development Team
