@@ -77,6 +77,12 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         url: '/finish',
         templateUrl: 'codescore-finish.html'
       })
+	  
+	  // url will be /codescore/postsurvey
+	  .state('codescore.postsurvey', {
+		  url: '/postsurvey',
+		  templateUrl: 'codescore-postsurvey.html'
+	  })
     
       // url will be /codescore/takesurvey
       .state('codescore.takesurvey', {
@@ -91,14 +97,29 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
   // our controller for the form
   // =============================================================================
-  .controller('formController', function($scope) {
+  .controller('formController', function($scope, $http) {
     
     // we will store all of our form data in this object
     $scope.formData = {};
-    
-    $scope.sendData = function(){
-      //TODO: implement PHP POST to MySQL
+	
+	$scope.result = "";
+		    
+    $scope.sendData = function(){		
+      //TODO: finish implementing PHP POST commands to MySQL
+	  $http({
+        method  : 'POST',
+        url     : 'post_db.php',
+        data    : $scope.formData, //forms user object
+        headers : {'Content-Type': 'application/json'} 
+      })
+	  .success(function(data) {
+		  //TODO: revise this section
+		  $scope.result += data.s1wt;
+      });
     };
+	
+	//TODO: implement PHP GET from MySQL for survey retrieval
+	//TODO: implement PHP POSt to MySQL for survey responses
     
 });
 
