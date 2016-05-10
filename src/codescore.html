@@ -1,0 +1,36 @@
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+  <div id="form-container">
+  
+      <div class="page-header text-center">
+          <h2>Code Score Survey App</h2>
+          
+          <!-- the links to our nested states using relative paths -->
+          <!-- add the active class if the state matches our ui-sref -->
+          <div id="status-buttons" class="text-center">
+              <a ui-sref-active="active" ui-sref=".set1"><span>1</span> Set 1</a>
+              <a ui-sref-active="active" ui-sref=".set2"><span>2</span> Set 2</a>
+              <a ui-sref-active="active" ui-sref=".set3"><span>3</span> Set 3</a>
+              <a ui-sref-active="active" ui-sref=".set4"><span>4</span> Set 4</a>
+              <a ui-sref-active="active" ui-sref=".set5"><span>5</span> Set 5</a>
+              <a ui-sref-active="active" ui-sref=".set6"><span>6</span> Set 6</a>
+              <a ui-sref-active="active" ui-sref=".set7"><span>7</span> Set 7</a>
+              <a ui-sref-active="active" ui-sref=".set8"><span>8</span> Set 8</a>
+              <a ui-sref-active="active" ui-sref=".finish"><span>9</span> Finish</a>
+			  <a ui-sref-active="active" ui-sref=".postsurvey"><span>10</span> Save</a>
+              <a ui-sref-active="active" ui-sref=".takesurvey"><span>S</span> Survey</a>
+          </div>
+      </div>
+      
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      <form id="signup-form">
+          <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+      </form>
+  
+  </div>
+
+</div>
+</div>
+

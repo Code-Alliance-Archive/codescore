@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<div class="col-xs-6 col-xs-offset-3">
+  <p>To take a survey, you must first save one to a database. If you haven't saved a survey, click "Edit Mode" to go to the editor. The most recently-saved survey appears below.</p>
+    <a ui-sref="codescore.set1" class="btn btn-block btn-info">
+    Edit Mode <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+	<br />
+    <div>
+       <ul>
+         <li ng-repeat="elemnt in questionelemnt">
+           <div>
+             <div id={{elemnt.id}} style="display:inline"> 
+			 <span ng-model="elemnt.question">
+               {{elemnt.question}}
+             </span>
+             </div>
+             <div style="display:inline"> 
+				<span>
+					<input type="text" style="color: black;" ng-model="elemnt.answer">
+                </span>
+              </div>
+           </div>
+		   <br />
+         </li>
+       </ul>
+	   	<a ui-sref="codescore.postsurvey" class="btn btn-block btn-info" ng-click="sendResponses()">
+		Submit Answers <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+	 </div>
+	</div>
+</html>
