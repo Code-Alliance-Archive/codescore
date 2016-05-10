@@ -1,21 +1,7 @@
 <?php 
-
-	/*
-	 *  post_db.php
-	 *	
-	 *	Script to save a survey to Code Score app's MySQL database
-	 *
-	 *	@author: S. West
-	 *	@affiliation: Code Alliance
-	 *	@date: May 2016
-	 *	@license: cc-by-nc-sa 3.0 IGO
-	 *
-	*/
-
 	//get contents from post
 	$postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
-	//may need to revise mysql_real_escape_string calls to conform to standard guidelines for secure SQL computations
 	$tabloc = mysql_real_escape_string($request["tablelocation"]);
 
 	//temporary array to find which questions and weights were filled out
@@ -32,8 +18,7 @@
 	$final = "INSERT INTO " . $tabloc . " (survid,";
 	$finalhalf = ") VALUES (";
 	
-	//attempt to connect to MySQL server (NOTE: change login info before deploying on real systems
-	//(never use default login information, and never operate a database without setting a root password)
+	//attempt to connect to database
 	$link = mysql_connect("localhost:3306", "root", "");
 	if(! $link ){
 		die(mysql_error());

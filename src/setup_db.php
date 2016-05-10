@@ -1,21 +1,7 @@
 <?php
-
-	/*
-	 *  setup_db.php
-	 *	
-	 *	Script to setup a MySQL database for use with the Code Score app
-	 *
-	 *	@author: S. West
-	 *	@affiliation: Code Alliance
-	 *	@date: May 2016
-	 *	@license: cc-by-nc-sa 3.0 IGO
-	 *
-	*/
-
 	//retrieve contents from POST
 	$postdata = file_get_contents("php://input");
 	$request = json_decode("$postdata",true);
-	//may need to revise mysql_real_escape_string calls to conform to standard guidelines for secure SQL computations
 	$dbname = mysql_real_escape_string($request["setupname"]);
 	$tb1 = mysql_real_escape_string($request["qtab"]);
 	$tb2 = mysql_real_escape_string($request["atab"]);
@@ -25,8 +11,7 @@
 	$querytb1str = "CREATE TABLE IF NOT EXISTS " . $dbname . "." . $tb1;
 	$querytb2str = "CREATE TABLE IF NOT EXISTS " . $dbname . "." . $tb2;
 	
-	//attempt to connect to MySQL server (NOTE: change login info before deploying on real systems
-	//(never use default login information, and never operate a database without setting a root password)
+	//attempt to connect to MySQL server
 	$link = mysql_connect("localhost:3306", "root", "");
 	if(! $link ){
 		die(mysql_error());
