@@ -1,5 +1,19 @@
 <?php
 
+	/*
+	 *  get_db.php
+	 *	
+	 *	Script to retrieve a saved survey from Code Score app's MySQL database
+	 *
+	 *	@author: S. West
+	 *	@affiliation: Code Alliance
+	 *	@date: May 2016
+	 *	@license: cc-by-nc-sa 3.0 IGO
+	 *
+	*/
+
+	//attempt to connect to MySQL server (NOTE: change login info before deploying on real systems
+	//(never use default login information, and never operate a database without setting a root password)
 	$link = mysqli_connect("localhost:3306","root","","surveydb");
 	if(! $link ){
 		die(mysqli_error($link));
