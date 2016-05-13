@@ -1,5 +1,13 @@
 <?php
 
+/*
+ *	@author: S. West
+ *	@affiliation: Code Alliance
+ *	@date: May 2016
+ *	@license: cc-by-nc-sa 3.0 IGO
+ *
+*/
+
 	$link = mysqli_connect("localhost:3306","root","","surveydb");
 	if(! $link ){
 		die(mysqli_error($link));
