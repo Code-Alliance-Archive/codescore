@@ -1,3 +1,20 @@
+/*
+ *	app.js
+ *
+ *	Main AngularJS controller and configuration script
+ *
+ *	Portions of code (C) 2016 Scotch.io, L.L.C. https://scotch.io/tutorials/angularjs-multi-step-form-using-ui-router
+ *	Permission for use in this app implied according to terms of original license holder, found here: https://scotch.io/license
+ *	This program is inteded for non-profit, non-commercial use. New licenses claimed only on new edits.
+ *
+ *	New edits:
+ *	@author: S. West
+ *	@affiliation: Code Alliance
+ *	@date: May 2016
+ *	@license: cc-by-nc-sa 3.0 IGO
+ *
+*/
+
 
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================

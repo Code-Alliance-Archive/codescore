@@ -1,4 +1,13 @@
 <?php 
+
+/*
+ *	@author: S. West
+ *	@affiliation: Code Alliance
+ *	@date: May 2016
+ *	@license: cc-by-nc-sa 3.0 IGO
+ *
+*/
+
 	//get contents from post
 	$postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);
